@@ -1,0 +1,14 @@
+{
+  "name": "Custom-Game-Engine-Signal",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node signal.js"
+  },
+  "author": "ybbobsille",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ws": "^8.18.3"
+  },
+  "type": "module"
+}
