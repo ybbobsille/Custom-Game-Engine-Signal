@@ -42,23 +42,9 @@ function Generate_User_Id() {
     return id
 }
 
-function Handle_Answer(answer) {
-    answer = answer.trim()
-    if (answer.match(/\d+\.\d+\.\d+\.\d+/) == null) {
-        throw new Error("Ip must match: 'x.x.x.x'")
-    }
-    return answer
-}
-
-function encodeConnectionInfo(ip, port, authCodeBase64) {
-    return btoa(`${ip}:${port}:${authCodeBase64}`);
-}
-
 function start(ip) {
     const auth = Generate_Auth_Id()
     console.log(`Auth: ${auth}`)
-
-    console.log(`\n\n\n\n\nConnection code: ${encodeConnectionInfo(ip, port, auth)}`)
 
     const wss = new WebSocketServer({ port: port });
 
@@ -164,5 +150,4 @@ function Find_Ip() {
     return "127.0.0.1"
 }
 
-//start(Handle_Answer("127.0.0.1"))
 start(Find_Ip())
