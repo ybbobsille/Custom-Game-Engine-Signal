@@ -72,6 +72,7 @@ function start(ip) {
 
         const on_message = (data) => {
             const msg = JSON.parse(data)
+            console.log(msg)
             if (msg.msg) console.log("incoming message: '", msg.msg, "'")
 
             if (msg.register_host) {
